@@ -6,7 +6,7 @@ import React from 'react';
 const Product = ({product, addToCart}) => {
   const {pic, title, price, description} = product;
   return (
-    <div className="card card-compact w-48 bg-base-100 shadow-xl lg:w-80 md:w-72">
+    <div className="card card-compact w-48 bg-base-200 shadow-lg mb-3 md:mx-2 lg:w-80 md:w-72">
       <figure>
         <img src={pic} className="rounded-xl h-56 w-64 p-5" alt="Product"/>
       </figure>
