@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { deleteShoppingCart, removeFromDb } from '../utilities/localStorage';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/localStorage';
 import CartDetails from './CartDetails';
 
 const Cart = ({cart, setCart}) => {
+  const navigate = useNavigate();
 
   const removeItem = (removeProduct) =>{
     const remaining = cart.filter(cartProduct => cartProduct.id !== removeProduct);
@@ -15,8 +16,6 @@ const Cart = ({cart, setCart}) => {
     setCart([]);
   }
 
-  const navigate = useNavigate();
- 
   let total = 0;
   let quantity = 0;
 
@@ -56,10 +55,10 @@ const Cart = ({cart, setCart}) => {
 
               <div className="flex justify-center items-center gap-5">
               {
-                cart[0] && <button className="btn btn-accent w-2/5"  onClick={ () => clearAll()}> Clear All </button>
+                cart[0] && <button className="btn btn-error w-2/5"  onClick={ () => clearAll()}> Clear All </button>
               }
               {
-                cart[0] && <button className="btn btn-warning w-2/5" onClick={ () => navigate('/thankyou')}> Proceed Checkout </button>
+                cart[0] && <button className="btn btn-success w-2/5" onClick={ () => navigate('/thankyou')}> Proceed Checkout </button>
               }
               </div>  
           </div>

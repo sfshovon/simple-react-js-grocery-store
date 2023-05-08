@@ -1,17 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/Navbar';
-import Shop from './components/Shop';
-import About from './components/About';
-import ThankYou from './components/ThankYou';
-import NotFound from './components/NotFound';
+import About from './components/About/About';
+import Product from './components/Product/Product';
+import Navbar from './components/Shared/Navbar';
+import NotFound from './components/Static/NotFound';
+import ThankYou from './components/Static/ThankYou';
 
 function App() {
   return (
     <div className="App">
      <Navbar/>
      <Routes>
-      <Route path="/" element={<Shop/>} ></Route>
+      <Route path="/" element={<Product/>} ></Route>
       <Route path="/about" element={<About/> }></Route>
       <Route path="/thankyou" element={<ThankYou/> }></Route>
       <Route path="*" element={<NotFound/>} ></Route>
